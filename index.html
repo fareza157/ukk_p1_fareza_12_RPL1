@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>@import url(https://fonts.googleapis.com/css?family=Nova+Mono);
+
+    *{
+      font-family: 'Nova Mono';
+    }
+    body{ 
+      background-color: #bd3288;
+    }
+    a{
+      text-decoration:none;
+    }
+    a:hover{
+      background:#008870;
+    }
+    #MainBox{
+      position:relative;
+    }
+    #AltBox{
+      position:absolute;
+      right:0; left: 0; 
+      margin:auto; margin-bottom:1em;
+      width: 300px; height: auto;
+      background-color: #232323;
+      border-radius: 10px;
+      padding: 1em;
+      box-shadow: 0px 0px 8px black;
+    }
+    .marca{
+      text-align: right;
+      color:#95a5a6;
+      font-size: 12px;
+      margin-top: 0;
+    }
+    .Shine{
+      position:absolute;
+      z-index:3;
+      width:100%;
+      height:40px;
+      background:rgba(255,255,255,0.2);
+    }
+    .Screen{
+      position:relative;
+      width:100%; height: 80px;
+      background-color:#34c8db;
+      box-shadow: inset 0px 0px 20px #34495e;
+    }
+    .igual{
+      margin-bottom:-1em;
+      background-color: #2567e2;
+      width:264px;
+      border-radius:10px;
+      
+    }
+    .igual:hover{
+      background-color: #30f830;
+      
+    }
+    #numbers{
+      position:absolute;
+      z-index: 4;
+      height:100%;
+      width:100%;
+      border:none;
+      background:transparent;
+      font-size: 48px;
+      padding:10px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;   
+      box-sizing: border-box;     
+      color: rgba(2,2,2,0.7);
+      text-align: right;
+      
+    }
+    ul{
+      position:relative;
+      list-style:none;
+      padding:1em;
+    }
+    ul > li{
+      display:inline-block;
+    }
+    ul > li > a{
+      display:block;
+      text-align:center;
+      line-height: 60px;
+      color:white;
+      width:60px; height:60px;
+      font-size:26px;
+      border-radius:100%;
+      background:#008845;
+      margin:10px 0 10px 0;
+    }
+    .credits{
+      position:absolute;
+      font-size:14Px;
+      padding-top:10px;
+      padding-bottom:10px;
+      color:#FFAAAA;
+    }</style>
+</head>
+<body>
+  <div id="MainBox">
+    <div id="AltBox">
+      <p class="marca" >UKK KALKULATOR FAREZA</p>
+      <div class="Screen">
+           <div class="Shine"></div>
+           <div class="TextScreen">
+               <input type="text"
+                      id="numbers"
+                      maxlength="10"
+                      value="0"
+                      readonly="true"/>
+           </div>
+      </div>
+      <ul>
+        <li><a onclick="updatePanel(this)" href="#">7</a></li>
+        <li><a onclick="updatePanel(this)" href="#">8</a></li>
+        <li><a onclick="updatePanel(this)" href="#">9</a></li>
+        <li><a onclick="doOperation(this.innerHTML)" href="#">/</a></li>
+        <li><a onclick="updatePanel(this)" href="#">4</a></li>
+        <li><a onclick="updatePanel(this)" href="#">5</a></li>
+        <li><a onclick="updatePanel(this)" href="#">6</a></li>
+        <li><a onclick="doOperation(this.innerHTML)" href="#">*</a></li>
+        <li><a onclick="updatePanel(this)" href="#">1</a></li>
+        <li><a onclick="updatePanel(this)" href="#">2</a></li>
+        <li><a onclick="updatePanel(this)" href="#">3</a></li>
+        <li><a onclick="doOperation(this.innerHTML)" href="#">-</a></li>
+        <li><a onclick="updatePanel(this)" href="#">0</a></li>
+        <li><a onclick="doControl(this.innerHTML)" href="#">.</a></li>
+        <li><a onclick="doControl(this.innerHTML)" href="#">C</a></li>
+        <li><a onclick="doOperation(this.innerHTML)" href="#">+</a></li>
+        <li><a class="igual" onclick="doControl(this.innerHTML)" href="#">=</a></li>
+      </ul>
+      <p class="credits"> fareza kalkulator </p>
+    </div>
+    
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
